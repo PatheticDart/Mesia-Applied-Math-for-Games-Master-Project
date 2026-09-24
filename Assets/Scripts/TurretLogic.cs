@@ -134,7 +134,7 @@ public class TurretLogic : MonoBehaviour
             {
                 rocketLogic.direction = direction;
             }
-            Destroy(newProjectile, 3f);
+            Destroy(newProjectile, projectileLifeTime);
 
             yield return new WaitForSeconds(fireRate);
         }
@@ -163,7 +163,7 @@ public class TurretLogic : MonoBehaviour
             {
                 rocketLogic.direction = direction;
             }
-            Destroy(newProjectile, projLifeTime);
+            Destroy(newProjectile, projectileLifeTime);
         }   
 
         yield return new WaitForSeconds(fireRate);
@@ -196,7 +196,7 @@ public class TurretLogic : MonoBehaviour
             {
                 rocketLogic.direction = direction;
             }
-            Destroy(newProjectile, 3f);
+            Destroy(newProjectile, projectileLifeTime);
 
             yield return new WaitForSeconds(fireRate);
         }
@@ -218,14 +218,12 @@ public class TurretLogic : MonoBehaviour
 
     void FlameTurretLineRenderer()
     {
-        // Draw detection cone matching IsInCone logic
         int segments = 20;
         lineRenderer.positionCount = segments + 2;
 
         Vector3 origin = transform.position;
         lineRenderer.SetPosition(0, origin);
 
-        // Convert Unity rotation (eulerAngles.y) to polar angle matching IsInCone (-y + 90)
         float baseAngle = -transform.eulerAngles.y + 90f;
         float halfCone = coneAngle / 2f;
         float startAngle = baseAngle - halfCone;
@@ -236,21 +234,18 @@ public class TurretLogic : MonoBehaviour
             float currentAngle = startAngle + (i * step);
             float rad = currentAngle * Mathf.Deg2Rad;
 
-            // Polar math: Cos -> X, Sin -> Z
             Vector3 pointOffset = new Vector3(Mathf.Cos(rad), 0f, Mathf.Sin(rad)) * range;
             lineRenderer.SetPosition(i + 1, origin + pointOffset);
         }
 
         lineRenderer.SetPosition(segments + 1, origin);
 
-        // Color gradient to indicate flame range
         lineRenderer.startColor = Color.yellow;
         lineRenderer.endColor = Color.red;
     }
 
     void SniperTurretLineRenderer()
     {
-        // Draw a single straight targeting ray along transform.forward up to range distance
         lineRenderer.positionCount = 2;
 
         Vector3 origin = transform.position;
@@ -259,7 +254,6 @@ public class TurretLogic : MonoBehaviour
         lineRenderer.SetPosition(0, origin);
         lineRenderer.SetPosition(1, targetPoint);
 
-        // Color laser style
         lineRenderer.startColor = Color.red;
         lineRenderer.endColor = Color.red;
     }
@@ -276,13 +270,11 @@ public class TurretLogic : MonoBehaviour
 
         int circleSegments = 40;
 
-        // Total points: (shotCount * 3 for fan) + (circleSegments + 1 for full 360 loop)
         lineRenderer.positionCount = (shotCount * 3) + (circleSegments + 1);
 
         int pointIndex = 0;
         float lastPelletAngleDeg = 0f;
 
-        // 1. Trace Pellet Lines
         for (int i = 0; i < shotCount; i++)
         {
             float currentAngle = startAngle + (i * angleSpacing);
@@ -294,11 +286,10 @@ public class TurretLogic : MonoBehaviour
             lineRenderer.SetPosition(pointIndex++, origin);
             lineRenderer.SetPosition(pointIndex++, endPoint);
 
-            // On the final pellet line, stay at the endPoint instead of returning to origin
             if (i == shotCount - 1)
             {
                 lineRenderer.SetPosition(pointIndex++, endPoint);
-                lastPelletAngleDeg = currentAngle; // Save angle to seamlessly start circle here
+                lastPelletAngleDeg = currentAngle;
             }
             else
             {
@@ -306,7 +297,6 @@ public class TurretLogic : MonoBehaviour
             }
         }
 
-        // 2. Trace Outer Circle seamless starting directly from the tip of the last pellet
         float step = 360f / circleSegments;
         for (int i = 0; i <= circleSegments; i++)
         {
