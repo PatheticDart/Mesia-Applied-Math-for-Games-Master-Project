@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 2872513596170037524}
   - component: {fileID: -928712869582728580}
   m_Layer: 0
-  m_Name: Rocket 1
+  m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,4 +256,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   direction: {x: 0, y: 0, z: 0}
-  speed: 15
+  speed: 6

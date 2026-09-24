@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if (Mathf.Abs(horizontalInput) > 0.1f)
+        /*if (Mathf.Abs(horizontalInput) > 0.1f)
         {
             Vector3 direction = new Vector3(horizontalInput, 0.0f, 0);
             transform.position += direction * speed * Time.deltaTime;
@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 direction = new Vector3(0, 0.0f, verticalInput);
             transform.position += direction * speed * Time.deltaTime;
-        };
+        };*/
+
+        Vector3 direction = new Vector3(horizontalInput, 0f, verticalInput);
+        transform.position += direction * speed * Time.deltaTime;
 
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
         float clampedZ = Mathf.Clamp(transform.position.z, minZ, maxZ);
