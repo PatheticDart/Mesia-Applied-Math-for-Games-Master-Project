@@ -238,7 +238,7 @@ MonoBehaviour:
   rotationSpeed: 2
   range: 10
   coneAngle: 90
-  burstInterval: 2
+  burstInterval: 0.2
   fireRate: 0.1
   shotCount: 5
   projectile: {fileID: 2237810824390243209, guid: ed9a5939a2510f84e83460e0c9948607, type: 3}
