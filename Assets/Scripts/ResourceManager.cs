@@ -7,9 +7,13 @@ public class ResourceManager : MonoBehaviour
 
     public int coinAmount = 0;
     public int playerHealth = 20;
+    public int maxHealth = 20;
+
     public TMP_Text coinText;
     public TMP_Text healthText;
     public GameObject gameOverScreen;
+
+    public PlayerHealthUI healthUI;
 
     private void Awake()
     {
@@ -28,6 +32,11 @@ public class ResourceManager : MonoBehaviour
     {
         coinText.text = coinAmount.ToString();
         healthText.text = playerHealth.ToString();
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHealthBar(playerHealth, maxHealth);
+        }
     }
 
     public void AddCoin(int amount)
@@ -44,16 +53,23 @@ public class ResourceManager : MonoBehaviour
 
     public void SubtractHealth(int amount)
     {
-        if(playerHealth - amount < 0)
+        if(playerHealth - amount <= 0)
         {
             playerHealth = 0;
-            gameOverScreen.SetActive(true);
             Time.timeScale = 0f;
+            gameOverScreen.SetActive(true);
         }
         else
         {
             playerHealth -= amount;
+            Time.timeScale = 1f;
+            gameOverScreen.SetActive(false);
         }
         healthText.text = playerHealth.ToString();
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHealthBar(playerHealth, maxHealth);
+        }
     }
 }

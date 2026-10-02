@@ -14,3 +14,9 @@ Video Link: https://drive.google.com/file/d/1VX7zXVnNcazBp0MOuSIkK3GEJ\_S2iRKu/v
 
 
 
+# Activity 4 - Applied Math for Games
+
+
+
+Video Link: https://drive.google.com/file/d/1pT-IeIc5Vy7-ruxyBAU1XmejIecuqLJh/view?usp=sharing
+

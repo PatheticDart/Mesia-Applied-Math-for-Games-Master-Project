@@ -49,10 +49,8 @@ public class TurretLogic : MonoBehaviour
 
     void Update()
     {
-
         if (target == null) return;
 
-        //rotate to face target
         var dir = target.transform.position - transform.position;
         var angle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
         
@@ -146,7 +144,7 @@ public class TurretLogic : MonoBehaviour
         Vector3 toPlayer = ((Vector3)target.position
             - (Vector3)this.transform.position).normalized;
         float dot = Vector3.Dot(barrel, toPlayer);
-        bool inSights = dot >= 0.98f;  // ~11° tolerance
+        bool inSights = dot >= 0.98f;
 
         float radians = Mathf.Atan2(transform.forward.z, transform.forward.x);
         float x = Mathf.Cos(radians);
