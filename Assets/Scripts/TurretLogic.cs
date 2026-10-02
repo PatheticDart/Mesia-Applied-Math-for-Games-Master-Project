@@ -215,6 +215,10 @@ public class TurretLogic : MonoBehaviour
 
         return delta <= coneAngle / 2f; 
     }
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
 
     void FlameTurretLineRenderer()
     {

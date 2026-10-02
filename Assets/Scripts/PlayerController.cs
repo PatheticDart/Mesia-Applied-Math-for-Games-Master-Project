@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
 
         //placeholder code, was not able to learn alternative to FindObjectsOfType in time
-        ProjectileLogic[] activeProjectiles = FindObjectsOfType<ProjectileLogic>();
+       /* ProjectileLogic[] activeProjectiles = FindObjectsOfType<ProjectileLogic>();
 
         foreach (ProjectileLogic projectile in activeProjectiles)
         {
@@ -49,6 +49,6 @@ public class PlayerController : MonoBehaviour
                 sceneHandler.RestartScene();
                 break;
             }
-        }
+        }*/
     }
 }
