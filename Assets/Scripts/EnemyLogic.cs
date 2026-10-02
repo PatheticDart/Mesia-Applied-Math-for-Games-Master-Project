@@ -10,9 +10,15 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField]
     private float proximityRadius = 5f;
 
+    [SerializeField] private GameObject uiCoinPrefab;
+    [SerializeField] private Transform canvasTransform;
+    [SerializeField] private RectTransform bankUIRect;
+
     void Start()
     {
         scoreHandler = GameObject.Find("Resource Manager").GetComponent<ScoreHandler>();
+        canvasTransform = GameObject.Find("Canvas").transform;
+        bankUIRect = GameObject.Find("Coin Counter").GetComponent<RectTransform>();
     }
 
     void Update()
@@ -20,20 +26,22 @@ public class EnemyLogic : MonoBehaviour
         //placeholder code (I really need to figure out how to do this properly T-T)
         ProjectileLogic[] activeProjectiles = FindObjectsOfType<ProjectileLogic>();
 
-        // 2. Loop through them and check distance directly
         foreach (ProjectileLogic projectile in activeProjectiles)
         {
             float distance = Vector3.Distance(projectile.transform.position, transform.position);
 
-            // Uncomment this line to see the actual distance in the console!
-            // Debug.Log($"Distance to projectile: {distance}");
-
-            // 3. Proximity check
             if (distance <= proximityRadius)
             {
                 if (scoreHandler != null)
                 {
                     scoreHandler.AddScore(100);
+                }
+
+                GameObject coinUIObj = Instantiate(uiCoinPrefab, canvasTransform);
+
+                if (coinUIObj.TryGetComponent<CoinWorldToUI>(out var coinUI))
+                {
+                    coinUI.Initialize(transform.position, bankUIRect, Camera.main, value: 10, flyDuration: 1.2f);
                 }
 
                 Destroy(projectile.gameObject);

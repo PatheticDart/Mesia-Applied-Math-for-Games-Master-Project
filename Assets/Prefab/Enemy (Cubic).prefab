@@ -107,6 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   scoreHandler: {fileID: 0}
   proximityRadius: 1
+  uiCoinPrefab: {fileID: 4511987570790062575, guid: bd726fa34575b444eaa75a4340d64973, type: 3}
+  canvasTransform: {fileID: 0}
+  bankUIRect: {fileID: 0}
 --- !u!114 &3258912325113414447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ce3dd958845be4091fc782e81ee480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  health: 1
+  damageToPlayer: 1
 --- !u!1 &2679950308709950223
 GameObject:
   m_ObjectHideFlags: 0
