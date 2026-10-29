@@ -28,3 +28,13 @@ Video Link: https://drive.google.com/file/d/1pT-IeIc5Vy7-ruxyBAU1XmejIecuqLJh/vi
 
 Video Link: https://drive.google.com/file/d/18K8wTgG\_C1kaprOzr4yI1xs451T7\_3c0/view?usp=sharing
 
+
+
+# Activity 6 (Week 8) - Applied Math for Games
+
+
+
+Video Link: https://drive.google.com/file/d/1Z4TemcB\_fvPVXTrG70PH134V\_TuJjtUM/view?usp=sharing
+
+
+
