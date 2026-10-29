@@ -1,3 +1,11 @@
+# Recordings Master Folder
+
+
+
+Just in case individual links do not work: https://drive.google.com/drive/folders/1hEfatIyYkeVmgBXOhAAY1KaeEodZ3ALb?usp=sharing
+
+
+
 # Activity 2 - Applied Math for Games
 
 
