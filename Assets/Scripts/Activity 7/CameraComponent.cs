@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraComponent : MonoBehaviour
 {
-    public static float focalLenth= 300f;
-    // Start is called before the first frame update
+    public static float focalLength = 10f;
     public Vector2 vanishingPoint = Vector2.zero;
 }
