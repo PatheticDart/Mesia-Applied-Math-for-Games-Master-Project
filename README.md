@@ -46,3 +46,11 @@ Video Link: https://drive.google.com/file/d/1Z4TemcB\_fvPVXTrG70PH134V\_TuJjtUM/
 
 
 
+# Activity 7 (Week 9) - Applied Math for Games
+
+
+
+Video Link: https://drive.google.com/file/d/1CGeyHuFG8ZE4O3PtL1fd6opl4\_K0hEBk/view?usp=sharing
+
+
+
