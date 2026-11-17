@@ -54,3 +54,11 @@ Video Link: https://drive.google.com/file/d/1CGeyHuFG8ZE4O3PtL1fd6opl4\_K0hEBk/v
 
 
 
+# Activity 8 (Week 10) - Applied Math for Games
+
+
+
+Video Link: https://drive.google.com/file/d/1atWeHXMkJlvR7hNeVrHxcJW3-2CFZa0J/view?usp=sharing
+
+
+
